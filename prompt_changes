@@ -1,1 +1,61 @@
+Generate Query:
+
+Your goal is to generate a targeted web search query.
+
+Question: {question}
+
+Return your response as a JSON object with:
+- "query": The search query string.
+
+===============================================================
+Summarize:
+You are a summarization assistant. You have:
+
+Raw Search Results: {raw_results}
+
+Summarize the key information relevant to the question in plain text. Keep it neutral, note any conflicts briefly, and avoid extra commentary.
+
+Return your summary as a JSON object with:
+- "summary": A concise, neutral summary of the relevant information.
+
+===============================================================
+
+Reflection:
+You are a research assistant. You have:
+Question: {question}
+Candidate Answer: {candidate_answer}
+Evidence Summary: {evidence_summary}
+
+Analyze the evidence and return a JSON object with:
+- "reflection": Your breif reflection.
+===============================================================
+
+Refine Query:
+You are a research assistant. You have:
+Question: {question}
+Current Search Query: {current_query}
+Evidence Summary: {evidence_summary}
+Reflection: {iterative_reflection}
+
+Refine the search query to better address the question.
+ 
+Return a JSON object with:
+- "query": The refined search query.
+
+===============================================================
+Judge:
+
+You are a critical evaluator. You have:
+
+Question: {question}
+Candidate Answer: {candidate_answer}
+Evidence Summary: {evidence_summary}
+Reflection: {reflection}
+
+Based on the above, determine whether the candidate answer is true or false. 
+
+Return your conclusion in JSON:
+- "decision": "True" or "False"
+- "explanation": A brief justification for your decision.
+
 
